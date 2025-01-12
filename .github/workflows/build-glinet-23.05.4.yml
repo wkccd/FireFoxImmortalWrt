@@ -94,6 +94,7 @@ jobs:
       - name: Generate Firmware SHA-256
         run: |
           cp ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.bin ${{ github.workspace }}
+          cp ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.img.gz ${{ github.workspace }}
           for file in *.bin; do
             sha256sum "$file" > "$file.sha256"
             sha256sum -c "$file.sha256"
@@ -116,6 +117,7 @@ jobs:
           body_path: ${{ github.workspace }}/mediatek-filogic/info.md
           files: |
             ${{ github.workspace }}/*.bin
+            ${{ github.workspace }}/*.img.gz
             ${{ github.workspace }}/*.sha256
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
