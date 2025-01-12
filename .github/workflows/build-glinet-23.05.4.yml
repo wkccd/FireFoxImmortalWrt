@@ -93,6 +93,7 @@ jobs:
 
       - name: Generate Firmware SHA-256
         run: |
+          ls ${{ github.workspace }}/bin/targets/${{ env.platform }}/
           cp ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.bin ${{ github.workspace }}
           cp ${{ github.workspace }}/bin/targets/${{ env.platform }}/*.img.gz ${{ github.workspace }}
           for file in *.bin; do
