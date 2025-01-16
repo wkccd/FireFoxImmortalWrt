@@ -18,7 +18,8 @@ on:
           - libretech_all-h3-cc-h5
           - pine64_pine64-plus
           - pine64_sopine-baseboard
-        default: xunlong_orangepi-zero3
+          - friendlyarm_nanopi-r1
+        default: friendlyarm_nanopi-r1
       include_docker:
         description: |
           是否编译 Docker 插件
