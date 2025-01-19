@@ -69,7 +69,7 @@ jobs:
 
       - name: Generate Firmware SHA-256
         run: |
-          cp ${{ github.workspace }}/bin/targets/sunxi/cortexa53/*squashfs-sdcard.img.gz ${{ github.workspace }}
+          cp ${{ github.workspace }}/bin/targets/sunxi/cortexa7/*squashfs-sdcard.img.gz ${{ github.workspace }}
           for file in *.img.gz; do
             sha256sum "$file" > "$file.sha256"
             sha256sum -c "$file.sha256"
