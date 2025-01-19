@@ -8,6 +8,7 @@ on:
         description: "请选择路由器型号"
         required: true
         options:
+          - friendlyarm_nanopi-r1
           - friendlyarm_nanopi-r1s-h5
           - xunlong_orangepi-zero-plus
           - friendlyarm_nanopi-neo2
@@ -16,7 +17,7 @@ on:
           - libretech_all-h3-cc-h5
           - pine64_pine64-plus
           - pine64_sopine-baseboard
-        default: friendlyarm_nanopi-r1s-h5
+        default: friendlyarm_nanopi-r1
       include_docker:
         description: |
           是否编译 Docker 插件
@@ -63,7 +64,7 @@ jobs:
               -e PROFILE=$profile \
               -e INCLUDE_DOCKER=$include_docker \
               -e ROOTSIZE=$size \
-              immortalwrt/imagebuilder:sunxi-cortexa53-openwrt-23.05.4 /bin/bash /home/build/immortalwrt/build.sh
+              immortalwrt/imagebuilder:sunxi-cortexa7-openwrt-23.05.4 /bin/bash /home/build/immortalwrt/build.sh
           done
 
       - name: Generate Firmware SHA-256
